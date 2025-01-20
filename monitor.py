@@ -30,8 +30,9 @@ def main():
                         continue
                     files[file] = contents
                     # run the comand
-                    print("change detected running command", file=sys.stderr)
+                    print(f"Change detected in {file}, running command.", file=sys.stderr)
                     subprocess.run(["make"])
+                    print("/" * 80)
                 else:
                     files[file] = contents
         time.sleep(.1)
